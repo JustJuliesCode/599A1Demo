@@ -17,13 +17,13 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'pytest test_main.py'
+                sh 'pytest demo1_test.py'
             }
         }
 
         stage('Run Script') {
             steps {
-                sh 'python main.py'
+                sh 'python demo1.py'
             }
         }
     }

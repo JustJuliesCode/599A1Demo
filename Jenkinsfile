@@ -5,30 +5,27 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo 'Pulling latest code...'
-                
+                checkout scm
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'pip3 install pytest'
+                bat 'pip install pytest'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing...'
                 bat 'pytest demo1_test.py'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
                 bat 'python demo1.py'
             }
         }
-        
     }
 }

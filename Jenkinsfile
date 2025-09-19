@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo 'Pulling latest code...'
-                git branch : 'main', url: 'https://github.com/JustJuliesCode/599A1Demo.git'
+                
             }
         }
 

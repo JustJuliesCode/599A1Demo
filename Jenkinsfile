@@ -26,8 +26,9 @@ pipeline {
                 echo 'Deploying...'
             }
         }
+        
     }
-}
+
 post {
     success {
         bat 'echo "build successful"'

@@ -1,4 +1,4 @@
-import demo1
+from demo1 import add
 
 def test_add():
     assert demo1.add(2, 3) == 5

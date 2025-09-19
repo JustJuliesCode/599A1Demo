@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Pull Code') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install pandas'
+            }
+        }
+
+        stage('Process Data') {
+            steps {
+                sh 'python process_data.py'
+            }
+        }
+    }
+}

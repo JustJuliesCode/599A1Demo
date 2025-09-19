@@ -2,29 +2,37 @@ pipeline {
     agent any
 
     stages {
-        stage('Pull Code') {
+        stage('Checkout Code') {
             steps {
                 echo 'Pulling latest code...'
-                checkout scm
+                git branch : 'main', url: 'https://github.com/JustJuliesCode/599A1Demo.git'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build') {
             steps {
-                sh 'pip3 install pytest'
+                echo 'Building...'
             }
         }
 
-        stage('Run Tests') {
+        stage('Test') {
             steps {
-                sh 'python3 -m pytest demo1_test.py'
+                echo 'Testing...'
             }
         }
 
-        stage('Run Script') {
+        stage('Deploy') {
             steps {
-                sh 'python3 demo1.py'
+                echo 'Deploying...'
             }
         }
+    }
+}
+post {
+    success {
+        bat 'echo "build successful"'
+    }
+    failure {
+        bat 'echo "build failure"'
     }
 }

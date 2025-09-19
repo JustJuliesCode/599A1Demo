@@ -12,21 +12,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'pip3 install pytest'
+                bat 'pip3 install pytest'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'pytest demo1_test.py'
+                bat 'pytest demo1_test.py'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'python demo1.py'
+                bat 'python demo1.py'
             }
         }
         

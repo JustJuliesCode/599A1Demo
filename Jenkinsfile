@@ -12,13 +12,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'pip install pytest'
+                // No pip required
             }
         }
 
         stage('Test') {
             steps {
-                bat 'pytest demo1_test.py'
+                bat 'python demo1_test.py'
             }
         }
 

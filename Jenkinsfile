@@ -18,13 +18,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'python demo1_test.py'
+                bat 'python3 demo1_test.py'
             }
         }
 
         stage('Deploy') {
             steps {
-                bat 'python demo1.py'
+                bat 'python3 demo1.py'
             }
         }
     }

@@ -1,20 +1,29 @@
 pipeline {
-    agent any 
-    
+    agent any
+
     stages {
-        stage ('Build') {
+        stage('Pull Code') {
             steps {
-                echo 'Building the app'
+                echo 'Pulling latest code...'
+                checkout scm
             }
-        } 
-        stage ('Test') {
-            steps { 
-                echo 'Running the tests'
-            }
-        } 
-        stage ('Deploy') {
+        }
+
+        stage('Install Dependencies') {
             steps {
-                echo 'Deploying the Application'
+                sh 'pip install pytest'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'pytest test_main.py'
+            }
+        }
+
+        stage('Run Script') {
+            steps {
+                sh 'python main.py'
             }
         }
     }

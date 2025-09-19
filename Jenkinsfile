@@ -11,19 +11,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install pytest'
+                sh 'pip3 install pytest'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest demo1_test.py'
+                sh 'python3 -m pytest demo1_test.py'
             }
         }
 
         stage('Run Script') {
             steps {
-                sh 'python demo1.py'
+                sh 'python3 demo1.py'
             }
         }
     }

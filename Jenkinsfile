@@ -18,14 +18,15 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'python3 demo1_test.py'
+                bat '"C:\Users\julie\AppData\Local\Programs\Python\Python39\python.exe" demo1_test.py'
             }
         }
 
         stage('Deploy') {
             steps {
-                bat 'python3 demo1.py'
+                bat '"C:\Users\julie\AppData\Local\Programs\Python\Python39\python.exe" demo1.py'
             }
         }
+
     }
 }

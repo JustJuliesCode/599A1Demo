@@ -10,8 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building...'
-                // No pip required
+                echo 'Building...'    // No pip required
             }
         }
         stage('Test') {

@@ -1,8 +1,8 @@
 # from demoAdd import add
 
 # def test_add():
-#     assert demo1.add(2, 3) == 5
-#     assert demo1.add(0, 0) == 0
+#     assert demoAdd.add(2, 3) == 5
+#     assert demoAdd.add(0, 0) == 0
 
 import unittest
 import demoAdd

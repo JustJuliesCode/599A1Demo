@@ -4,25 +4,23 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
+                echo 'Pulling code for Demo 3...'
                 checkout scm
             }
         }
-
-        stage('Install Dependencies') {
+        stage('Build') {
             steps {
-                sh 'pip install pandas'
+                echo 'Building...'    // No pip required
             }
         }
-
-        stage('Generate Dashboard') {
+        stage('Test') {
             steps {
-                sh 'python generate_dashboard.py'
+                bat '"C:\\Users\\julie\\AppData\\Local\\Programs\\Python\\Python39\\python.exe" demoAdd_test.py'
             }
         }
-
-        stage('Archive Dashboard') {
+        stage('Deploy') {
             steps {
-                archiveArtifacts artifacts: 'output/dashboard.html', fingerprint: true
+                bat '"C:\\Users\\julie\\AppData\\Local\\Programs\\Python\\Python39\\python.exe" demoAdd.py'
             }
         }
     }

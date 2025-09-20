@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Pull Code') {
+        stage('Checkout Code') {
             steps {
                 echo 'Pulling latest code...'
                 checkout scm
